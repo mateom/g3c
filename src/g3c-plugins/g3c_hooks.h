@@ -1,5 +1,20 @@
 #include "g3c_btypes.h"
 
+typedef struct G3cHookContext
+{
+        G3cHookCallback   reply_to;
+        G3cQueue*         message_queue;
+        void*             data_0;
+        void*             data_1;
+        void*             data_2;
+        void*             data_3;
+        void*             data_4;
+        void*             data_5;
+        void*             data_6;
+        void*             data_7;
+} G3cHookContext;
+
+
 typedef int G3cHook;
 
 typedef G3cBool (*)(G3cHook,G3cHookContext*, void*) G3cHookCallback;
@@ -70,10 +85,15 @@ typedef enum G3cCoreHook
                            no está disponible, un fallo interno, etc. */
 } G3cCoreHook;
 
-G3cBool      g3c_hook_register( G3cHook hook_id, char* hook_str );
+G3cBool      g3c_hook_register( G3cHook hook_id );
 
 G3cBool      g3c_hook_bind( 
                             G3cHook         hook_id, 
                             G3cHookOptions  opts, 
                             G3cHookCallback callback
+                          );
+
+G3cBool      g3c_hook_send(
+                            G3cHook          hook_id,
+                            G3cHookContext*  hook_context
                           );
