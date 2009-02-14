@@ -30,4 +30,18 @@ G3cPluginHookList   p_name##_hook_list[] {
 
 #define G3C_PLUGIN_EXPORT_HOOKS_END(p_name) {0,NULL}};
 
+#define G3C_PLUGIN_HOOKSLIST_P(p_name)  p_name##_hook_list
 
+typedef struct G3cPluginInfo
+{
+	char*                plugin_name;
+	char*                plugin_authors;
+	char*                plugin_license;
+	G3cPluginHookList*   plugin_hooks;
+} G3cPluginInfo;
+
+#define G3C_PLUGIN_EXPORT_INFO_INIT(p_name) \
+G3cPluginInfo   p_name##_info
+
+#define G3C_PLUGIN_EXPORT_INFO(p_name,key,value) \
+p_name##_info.##key = value
