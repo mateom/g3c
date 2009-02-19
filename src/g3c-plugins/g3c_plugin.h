@@ -45,3 +45,10 @@ G3cPluginInfo   p_name##_info
 
 #define G3C_PLUGIN_EXPORT_INFO(p_name,key,value) \
 p_name##_info.##key = value
+
+#define G3C_PLUGIN_EXPORT_ALL(p_name)                                    \
+void g3c_plugin_get_info(G3cPluginInfo* p_info,G3cPluginHookList h_info) \
+{                                                                        \
+	*p_info = p_name##_info;                                             \
+	*h_info = p_name##_hook_list;                                        \
+}

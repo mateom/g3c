@@ -11,5 +11,5 @@ G3C_PLUGIN_EXPORT_INFO_INIT(dummy);
 G3C_PLUGIN_EXPORT_INFO(dummy,plugin_name,"Dummy plugin");
 G3C_PLUGIN_EXPORT_INFO(dummy,plugin_authors,"Mateo Matachana\nAndres Alonso");
 G3C_PLUGIN_EXPORT_INFO(dummy,plugin_license,"Licencia para probar");
-G3C_PLUGIN_EXPORT_INFO(dummy,plugin_hooks,G3C_PLUGIN_HOOKSLIST(dummy));
+G3C_PLUGIN_EXPORT_INFO(dummy,plugin_hooks,G3C_PLUGIN_HOOKSLIST_P(dummy));
 

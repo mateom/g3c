@@ -1,0 +1,20 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 9.00
+# Visual Studio 2005
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "G3C Peer 2 Peer", "G3C Peer 2 Peer.vcproj", "{7DB9AA34-592A-4A0E-95ED-40E17E05BF2A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+		Release|Win32 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{7DB9AA34-592A-4A0E-95ED-40E17E05BF2A}.Debug|Win32.ActiveCfg = Debug|Win32
+		{7DB9AA34-592A-4A0E-95ED-40E17E05BF2A}.Debug|Win32.Build.0 = Debug|Win32
+		{7DB9AA34-592A-4A0E-95ED-40E17E05BF2A}.Release|Win32.ActiveCfg = Release|Win32
+		{7DB9AA34-592A-4A0E-95ED-40E17E05BF2A}.Release|Win32.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
