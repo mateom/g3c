@@ -1,3 +1,8 @@
+#ifndef _G3C_PLUGINS_H_
+#define _G3C_PLUGINS_H_
+
+#include "g3c_hooks.h"
+
 typedef struct G3cPluginHookList
 {
 	int              hook_id;
@@ -32,7 +37,7 @@ G3cPluginHookList   p_name##_hook_list[] {
 
 #define G3C_PLUGIN_HOOKSLIST_P(p_name)  p_name##_hook_list
 
-typedef struct G3cPluginInfo
+typedef struct _G3cPluginInfo
 {
 	char*                plugin_name;
 	char*                plugin_authors;
@@ -40,15 +45,20 @@ typedef struct G3cPluginInfo
 	G3cPluginHookList*   plugin_hooks;
 } G3cPluginInfo;
 
-#define G3C_PLUGIN_EXPORT_INFO_INIT(p_name) \
-G3cPluginInfo   p_name##_info
+#define G3C_PLUGIN_EXPORT_INFO_BEGIN(p_name) \
+G3cPluginInfo   p_name##_info = {
 
-#define G3C_PLUGIN_EXPORT_INFO(p_name,key,value) \
-p_name##_info.##key = value
+
+#define G3C_PLUGIN_EXPORT_INFO(verbose,value) \
+        value,
+
+#define G3C_PLUGIN_EXPORT_INFO_END(p_name) \
+}
 
 #define G3C_PLUGIN_EXPORT_ALL(p_name)                                    \
-void g3c_plugin_get_info(G3cPluginInfo* p_info,G3cPluginHookList h_info) \
+void g3c_plugin_get_info(G3cPluginInfo* p_info) \
 {                                                                        \
 	*p_info = p_name##_info;                                             \
-	*h_info = p_name##_hook_list;                                        \
 }
+
+#endif

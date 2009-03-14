@@ -1,9 +1,17 @@
+#ifndef _G3C_HOOKS_H_
+#define _G3C_HOOKS_H_
+
 #include "g3c_btypes.h"
 
-typedef struct G3cHookContext
+typedef int G3cHook;
+typedef struct _G3cHookContext G3cHookContext;
+
+typedef G3cBool (*G3cHookCallback)(G3cHook, G3cHookContext*,void*);
+
+struct 
 {
         G3cHookCallback   reply_to;
-        G3cQueue*         message_queue;
+        //G3cQueue*         message_queue;
         void*             data_0;
         void*             data_1;
         void*             data_2;
@@ -12,12 +20,10 @@ typedef struct G3cHookContext
         void*             data_5;
         void*             data_6;
         void*             data_7;
-} G3cHookContext;
+} _G3cHookContext;
 
 
-typedef int G3cHook;
 
-typedef G3cBool (*)(G3cHook,G3cHookContext*, void*) G3cHookCallback;
 
 
 typedef enum G3cHookOptions
@@ -40,7 +46,7 @@ typedef enum G3cCoreHook
                            Este hook es útil para programar plugins para 
                            añadir un nuevo protocolo a G3C.  */
 
-        G3C_HOOK_OUTPKG   /* Mandar un paquete de datos por la interfaz de red.
+        G3C_HOOK_OUTPKG,   /* Mandar un paquete de datos por la interfaz de red.
                            A este hook solo se puede conectar el core de g3c,
                            sirve para indicarle que envíe los datos, es una
                            abstracción de la función send/sendto de la API
@@ -97,3 +103,5 @@ G3cBool      g3c_hook_send(
                             G3cHook          hook_id,
                             G3cHookContext*  hook_context
                           );
+
+#endif
