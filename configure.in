@@ -1,0 +1,25 @@
+#                                               -*- Autoconf -*-
+# Process this file with autoconf to produce a configure script.
+
+AC_PREREQ([2.63])
+AC_INIT([G3c P2P], [0.1], [http://r17443.ovh.net/g3cwiki/])
+AC_CONFIG_SRCDIR([src/g3c-core/g3c_loader.c])
+AC_CONFIG_HEADERS([config.h])
+AM_INIT_AUTOMAKE(g3c,0.1)
+
+# Checks for programs.
+AC_PROG_CC
+
+# Checks for libraries.
+
+# Checks for header files.
+
+# Checks for typedefs, structures, and compiler characteristics.
+
+# Checks for library functions.
+AC_FUNC_FORK
+
+AC_CONFIG_FILES([Makefile
+		src/Makefile
+                 src/g3c-core/Makefile])
+AC_OUTPUT
