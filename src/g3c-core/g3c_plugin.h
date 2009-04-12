@@ -61,4 +61,5 @@ void g3c_plugin_get_info(G3cPluginInfo* p_info) \
 	*p_info = p_name##_info;                                             \
 }
 
+typedef void (*G3cPluginInfoCallback)(G3cPluginInfo*);
 #endif

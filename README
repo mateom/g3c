@@ -1,7 +1,18 @@
  == G3C P2P ==
 
-      Creación del repositorio GIT para G3C peer 2 peer. 
+      G3C P2P es un programa P2P extremadamente extensible que busca conseguir
+      el anonimato total en el intercambio de ficheros a través de sistemas P2P.
 
+      Los programas P2P tipo eMule, BitTorrent, etc. han llegado a su cota 
+      máxima, no pueden evolucionar más sin un cambio radical. Ese cambio 
+      radical pretende ser G3C P2P, pretende crear un sistema P2P de la misma 
+      velocidad que BitTorrent, de la misma sencillez de utilización que 
+      eMule, la extensibilidad de Firefox, la capacidad de actualización de 
+      JDowndloader, con el anonimato de OneSwarm, etc.
+
+      G3C es ante todo un proyecto de investigación, que pretende tomar las 
+      mejores características de los programas P2P anteriores y evitar sus 
+      peores características. 
 
 
  == AUTHORS ==

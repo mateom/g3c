@@ -20,7 +20,7 @@ int main(int argc, char** argv)
 	g3c_list_init(list,10,sizeof(int));
 
 
-	/* Asginamos valores a la lista */
+	/* Asignamos valores a la lista */
 
 	for(i = 0; i < 10; i++)
 	{
@@ -33,7 +33,37 @@ int main(int argc, char** argv)
 	{
 		printf("list[%d] = %d\n",i,list[i]);
 	}
+#if 0
+	/* TODO Investigar porque hace fallar al destroy esto */
+	/* Cambiamos el tamaño de la lista a 20 elementos */
 
+	g3c_list_set_size(list, 20);
+
+	/* Y nos aseguramos de que se le reserve memoria */
+	g3c_list_alloc(list);
+
+	/* Asignamos algunos valores: */
+
+	for( i = 0;i < 20;i++)
+	{
+		if( (i % 2) == 0 )
+		{
+			list[i] = 2^(i/2);
+		} else
+		{
+			list[i] = -2^(i/2);
+		}
+	}
+
+	printf("Lista de 20 elementos:\n\n");
+
+	/* Y los imprimimos */
+
+	for( i = 0;i < 20;i++)
+	{
+		printf("list[%d] = %d\n",i,list[i]);
+	}
+#endif
 	/* Liberamos los recursos utilizados por la lista */
 
 	g3c_list_destroy(list);

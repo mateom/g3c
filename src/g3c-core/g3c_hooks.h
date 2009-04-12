@@ -22,8 +22,11 @@ struct
         void*             data_7;
 } _G3cHookContext;
 
-
-
+typedef struct _G3cHookDescriptor {
+	G3cHook            hook_id;
+	G3cHookCallback    hook_callback;
+	G3cHookOptions     hook_options;
+} G3cHookDescriptor;
 
 
 typedef enum G3cHookOptions
